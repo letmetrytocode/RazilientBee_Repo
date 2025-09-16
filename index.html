@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Knowledge Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-300 font-sans">
+
+    <div class="fixed inset-0 z-0 overflow-hidden">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <div class="relative z-10 p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-white mb-2">Knowledge Hub</h1>
+            <p class="text-lg text-gray-400">Your flashcard repository for networking and cybersecurity concepts.</p>
+        </header>
+
+        <div class="flex justify-center space-x-4 mb-8">
+            <button class="tab-btn px-6 py-2 rounded-full font-bold transition-colors duration-300 bg-gray-800 text-purple-400 hover:bg-purple-400 hover:text-white" data-category="networking">Networking</button>
+            <button class="tab-btn px-6 py-2 rounded-full font-bold transition-colors duration-300 bg-gray-800 text-cyan-400 hover:bg-cyan-400 hover:text-white" data-category="cybersecurity">Cybersecurity</button>
+        </div>
+
+        <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
