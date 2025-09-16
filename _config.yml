@@ -1,0 +1,3 @@
+remote_theme: pages-themes/jekyll-theme-leaf
+plugins:
+  - jekyll-remote-theme
