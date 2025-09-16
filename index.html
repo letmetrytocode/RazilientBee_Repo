@@ -6,6 +6,9 @@
     <title>Networking Knowledge Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-gray-300 font-sans">
 
@@ -15,19 +18,21 @@
         <div id="stars3"></div>
     </div>
 
-    <div class="relative z-10 p-8">
+    <div class="relative z-10 p-8 min-h-screen flex flex-col items-center">
         <header class="text-center mb-12">
-            <h1 class="text-5xl font-extrabold text-white mb-2">Knowledge Hub</h1>
-            <p class="text-lg text-gray-400">Your flashcard repository for networking and cybersecurity concepts.</p>
+            <h1 class="text-6xl md:text-7xl font-extrabold text-white mb-4 tracking-tight font-montserrat">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">Knowledge Hub</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Your sleek, modern repository for networking and cybersecurity concepts. ✨</p>
         </header>
 
-        <div class="flex justify-center space-x-4 mb-8">
-            <button class="tab-btn px-6 py-2 rounded-full font-bold transition-colors duration-300 bg-gray-800 text-purple-400 hover:bg-purple-400 hover:text-white" data-category="networking">Networking</button>
-            <button class="tab-btn px-6 py-2 rounded-full font-bold transition-colors duration-300 bg-gray-800 text-cyan-400 hover:bg-cyan-400 hover:text-white" data-category="cybersecurity">Cybersecurity</button>
+        <div class="flex flex-wrap justify-center mb-12 space-x-2 md:space-x-4">
+            <button class="tab-btn px-6 py-2 rounded-full text-lg font-semibold transition-colors duration-300 bg-gray-800 text-purple-400 hover:bg-purple-400 hover:text-white border border-transparent hover:border-purple-400 shadow-md transform hover:scale-105" data-category="networking">Networking</button>
+            <button class="tab-btn px-6 py-2 rounded-full text-lg font-semibold transition-colors duration-300 bg-gray-800 text-cyan-400 hover:bg-cyan-400 hover:text-white border border-transparent hover:border-cyan-400 shadow-md transform hover:scale-105" data-category="cybersecurity">Cybersecurity</button>
         </div>
 
-        <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            </div>
+        <main id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
+            </main>
     </div>
 
     <script src="script.js"></script>
