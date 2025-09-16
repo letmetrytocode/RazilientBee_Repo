@@ -37,17 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createCard(cardData) {
         const cardContainer = document.createElement('div');
-        cardContainer.className = 'card-container h-64';
+        cardContainer.className = 'card-container h-64'; // Set a fixed height for consistent card size
 
         const cardInner = document.createElement('div');
         cardInner.className = 'card-inner shadow-lg';
 
         const cardFront = document.createElement('div');
-        cardFront.className = 'card-front flex items-center justify-center p-4 text-center rounded-xl transform transition-transform duration-500 hover:scale-105';
+        // Added some Tailwind classes for consistent styling
+        cardFront.className = 'card-front bg-gray-800 text-purple-400 border border-gray-700 flex items-center justify-center p-4 text-center rounded-xl transform transition-transform duration-500 hover:scale-105';
         cardFront.innerHTML = `<h3 class="text-xl font-bold">${cardData.front}</h3>`;
 
         const cardBack = document.createElement('div');
-        cardBack.className = 'card-back flex items-center justify-center p-4 text-center rounded-xl transform transition-transform duration-500';
+        // Added some Tailwind classes for consistent styling
+        cardBack.className = 'card-back bg-gray-700 text-cyan-400 border border-gray-600 flex items-center justify-center p-4 text-center rounded-xl transform transition-transform duration-500';
         cardBack.innerHTML = `<p>${cardData.back}</p>`;
 
         cardInner.appendChild(cardFront);
@@ -74,12 +76,19 @@ document.addEventListener('DOMContentLoaded', () => {
             renderCards(category);
 
             // Remove active class from all buttons and add to the clicked one
-            tabButtons.forEach(btn => btn.classList.remove('active-tab'));
+            tabButtons.forEach(btn => btn.classList.remove('active-tab', 'bg-purple-400', 'text-white', 'bg-cyan-400')); // Remove specific colors as well
+            
+            // Add active-tab and specific color classes based on category
             e.target.classList.add('active-tab');
+            if (category === 'networking') {
+                e.target.classList.add('bg-purple-400', 'text-white');
+            } else if (category === 'cybersecurity') {
+                e.target.classList.add('bg-cyan-400', 'text-white');
+            }
         });
     });
 
-    // Initial load: render networking concepts
+    // Initial load: render networking concepts and set its tab as active
     renderCards('networking');
-    document.querySelector('.tab-btn[data-category="networking"]').classList.add('active-tab');
+    document.querySelector('.tab-btn[data-category="networking"]').classList.add('active-tab', 'bg-purple-400', 'text-white');
 });
